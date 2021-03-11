@@ -201,7 +201,7 @@ keys.globalkeys = gears.table.join(
     --{description = "focus the next screen", group = "screen"}),
     --awful.key({ superkey, ctrlkey }, "k", function () awful.screen.focus_relative(-1) end,
     --{description = "focus the previous screen", group = "screen"}),
-    
+
     -- Urgent or Undo:
     -- Jump to urgent client or (if there is no such client) go back
     -- to the last tag
@@ -255,45 +255,45 @@ keys.globalkeys = gears.table.join(
         {description = "quit awesome", group = "awesome"}),
 
     -- Number of master clients
-    awful.key({ superkey, altkey }, "h",   
-        function () 
-            awful.tag.incnmaster( 1, nil, true) 
+    awful.key({ superkey, altkey }, "h",
+        function ()
+            awful.tag.incnmaster( 1, nil, true)
         end,
         {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ superkey, altkey }, "l",   
-        function () 
-            awful.tag.incnmaster(-1, nil, true) 
+    awful.key({ superkey, altkey }, "l",
+        function ()
+            awful.tag.incnmaster(-1, nil, true)
         end,
         {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ superkey, altkey }, "Left",   
-        function () 
-            awful.tag.incnmaster( 1, nil, true) 
+    awful.key({ superkey, altkey }, "Left",
+        function ()
+            awful.tag.incnmaster( 1, nil, true)
         end,
         {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ superkey, altkey }, "Right",   
-        function () 
-            awful.tag.incnmaster(-1, nil, true) 
+    awful.key({ superkey, altkey }, "Right",
+        function ()
+            awful.tag.incnmaster(-1, nil, true)
         end,
         {description = "decrease the number of master clients", group = "layout"}),
 
     -- Number of columns
-    awful.key({ superkey, altkey }, "k",   
-        function () 
+    awful.key({ superkey, altkey }, "k",
+        function ()
             awful.tag.incncol( 1, nil, true)
         end,
         {description = "increase the number of columns", group = "layout"}),
-    awful.key({ superkey, altkey }, "j",   
-        function () 
+    awful.key({ superkey, altkey }, "j",
+        function ()
             awful.tag.incncol( -1, nil, true)
         end,
         {description = "decrease the number of columns", group = "layout"}),
-    awful.key({ superkey, altkey }, "Up",   
-        function () 
+    awful.key({ superkey, altkey }, "Up",
+        function ()
             awful.tag.incncol( 1, nil, true)
         end,
         {description = "increase the number of columns", group = "layout"}),
-    awful.key({ superkey, altkey }, "Down",   
-        function () 
+    awful.key({ superkey, altkey }, "Down",
+        function ()
             awful.tag.incncol( -1, nil, true)
         end,
         {description = "decrease the number of columns", group = "layout"}),
@@ -590,7 +590,7 @@ keys.clientkeys = gears.table.join(
         helpers.move_client_dwim(c, "right")
     end),
 
-    -- Single tap: Center client 
+    -- Single tap: Center client
     -- Double tap: Center client + Floating + Resize
     awful.key({ superkey }, "c", function (c)
         awful.placement.centered(c, {honor_workarea = true, honor_padding = true})
@@ -753,13 +753,13 @@ for i = 1, ntags do
         awful.key({ superkey }, "#" .. i + 9,
             function ()
                 -- Tag back and forth
-                helpers.tag_back_and_forth(i)
+                --helpers.tag_back_and_forth(i)
 
                 -- Simple tag view
-                -- local tag = mouse.screen.tags[i]
-                -- if tag then
-                -- tag:view_only()
-                -- end
+                local tag = mouse.screen.tags[i]
+                if tag then
+                  tag:view_only()
+                end
             end,
             {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.

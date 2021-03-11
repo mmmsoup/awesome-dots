@@ -17,17 +17,19 @@ local themes = {
     "skyfall",      -- 3 --
     "ephemeral",    -- 4 --
     "amarena",      -- 5 --
+    "orpheus",
 }
 -- Change this number to use a different theme
-local theme = themes[5]
+local theme = themes[6]
 -- ===================================================================
 -- Affects the window appearance: titlebar, titlebar buttons...
 local decoration_themes = {
     "lovelace",       -- 1 -- Standard titlebar with 3 buttons (close, max, min)
     "skyfall",        -- 2 -- No buttons, only title
     "ephemeral",      -- 3 -- Text-generated titlebar buttons
+    "orpheus",
 }
-local decoration_theme = decoration_themes[3]
+local decoration_theme = decoration_themes[4]
 -- ===================================================================
 -- Statusbar themes. Multiple bars can be declared in each theme.
 local bar_themes = {
@@ -36,8 +38,9 @@ local bar_themes = {
     "skyfall",      -- 3 -- Weather, taglist, window buttons, pop-up tray
     "ephemeral",    -- 4 -- Taglist, start button, tasklist, and more buttons
     "amarena",      -- 5 -- Minimal taglist and dock with autohide
+    "orpheus",
 }
-local bar_theme = bar_themes[5]
+local bar_theme = bar_themes[6]
 
 -- ===================================================================
 -- Affects which icon theme will be used by widgets that display image icons.
@@ -51,8 +54,9 @@ local notification_themes = {
     "lovelace",       -- 1 -- Plain with standard image icons
     "ephemeral",      -- 2 -- Outlined text icons and a rainbow stripe
     "amarena",        -- 3 -- Filled text icons on the right, text on the left
+    "orpheus",
 }
-local notification_theme = notification_themes[3]
+local notification_theme = notification_themes[4]
 -- ===================================================================
 local sidebar_themes = {
     "lovelace",       -- 1 -- Uses image icons
@@ -76,13 +80,13 @@ local exit_screen_theme = exit_screen_themes[2]
 user = {
     -- >> Default applications <<
     -- Check apps.lua for more
-    terminal = "kitty -1",
-    floating_terminal = "kitty -1",
+    terminal = "urxvt",
+    floating_terminal = "urxvt",
     browser = "firefox",
-    file_manager = "kitty -1 --class files -e ranger",
-    editor = "kitty -1 --class editor -e vim",
-    email_client = "kitty -1 --class email -e neomutt",
-    music_client = "kitty -o font_size=12 --class music -e ncmpcpp",
+    file_manager = "urxvt --class files -e ranger",
+    editor = "urxvt --class editor -e nvim",
+    email_client = "thunderbird",
+    music_client = "urxvt --class music -e ncmpcpp",
 
     -- >> Web Search <<
     web_search_cmd = "xdg-open https://duckduckgo.com/?q=",
@@ -115,13 +119,13 @@ user = {
     -- as described in the README instructions
     -- Leave it empty in order to unlock with just the Enter key.
     -- lock_screen_custom_password = "",
-    lock_screen_custom_password = "awesome",
+    lock_screen_custom_password = "180103",
 
     -- >> Battery <<
     -- You will receive notifications when your battery reaches these
     -- levels.
     battery_threshold_low = 20,
-    battery_threshold_critical = 5,
+    battery_threshold_critical = 10,
 
     -- >> Weather <<
     -- Get your key and find your city id at
@@ -505,7 +509,7 @@ awful.rules.rules = {
                 "Subl3",
                 --"discord",
                 --"TelegramDesktop",
-                "firefox",
+                --"firefox",
                 "Nightly",
                 "Steam",
                 "Lutris",
